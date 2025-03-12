@@ -44,10 +44,13 @@
             </div>
 
             <div class="menu-icon" onclick="toggleMenu()">
-                <i class="fas fa-bars"></i>
+                <i class="fas fa-bars" id="menuToggleIcon"></i>
             </div>
         </div>
-        <div class="menu-mobile" id="menuMobile">
+        <div class="menu-mobile" id="menuIcon">
+            <div class="menu-close" onclick="toggleMenu()">
+                <i class="fas fa-times"></i>
+            </div>
             <a href="#">CURRÍCULO</a>
             <a href="#">ESPECIALIDADES</a>
             <a href="#">CERTIFICADOS</a>
@@ -71,6 +74,15 @@
         </div>
     </section>
 
-    
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menuIcon");
+            if (menu.style.display === "flex") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "flex";
+            }
+        }
+    </script>
 </body>
 </html>

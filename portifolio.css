@@ -114,8 +114,8 @@ section.perfil {
 
 /* Imagem do Perfil */
 .card img {
-    width:250px;
-    height:250px;
+    width: 250px;
+    height: 250px;
     border-radius: 15%;
     border: 3px solid #ffffff;
 }
@@ -154,20 +154,6 @@ section.perfil {
     transform: scale(1.2);
 }
 
- /* Estilos para o menu responsivo */
- .menu-mobile {
-    display: none;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    background: black;
-    width: 200px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
-    flex-direction: column;
-    align-items: center;
-}
-
 .menu-mobile a {
     color: white;
     padding: 10px;
@@ -193,6 +179,9 @@ section.perfil {
     }
     .menu-icon {
         display: block;
+    }
+    .menu-mobile {
+        display: flex;
     }
 }
 
@@ -228,4 +217,21 @@ section.perfil {
         width: 100%;
         padding: 20px;
     }
+}
+
+.menu-mobile {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: black;
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-mobile.active {
+    display: flex;
 }
