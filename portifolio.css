@@ -153,3 +153,79 @@ section.perfil {
     color: #1b1bd3;
     transform: scale(1.2);
 }
+
+ /* Estilos para o menu responsivo */
+ .menu-mobile {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: black;
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-mobile a {
+    color: white;
+    padding: 10px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.menu-mobile a:hover {
+    background: #1b1bd3;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .menu-desktop {
+        display: none;
+    }
+    .menu-icon {
+        display: block;
+    }
+}
+
+/* Responsividade da seção de perfil */
+.perfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.card {
+    background-color: #0d0d0d;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.card img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 15%;
+    border: 3px solid #ffffff;
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100%;
+        padding: 20px;
+    }
+}
