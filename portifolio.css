@@ -1,29 +1,21 @@
-/*  Estilo geral */
+/* Estilo geral */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Emblema One", system-ui;
-    font-weight: 400;
-    font-style: normal;
 }
 
 body {
     background-image: linear-gradient(to bottom, black, #00008B, black);
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    padding-top: 140px; /* espaço para o header fixo */
 }
 
-/* Interface */
-.interface {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Header */
+/* Header fixo */
 header {
     padding: 20px 4%;
     background-color: black;
@@ -43,7 +35,6 @@ header > .interface {
 header .menu-desktop a {
     color: #7e7e7e;
     text-decoration: none;
-    display: inline-block;
     transition: 0.5s;
 }
 
@@ -61,11 +52,6 @@ header nav ul li {
     margin: 0 20px;
 }
 
-header nav ul li a {
-    display: inline-block;
-    padding: 0 20px;
-}
-
 header .btn-contato button {
     padding: 10px 40px;
     font-weight: 600;
@@ -75,12 +61,12 @@ header .btn-contato button {
     border: 0;
     border-radius: 30px;
     cursor: pointer;
+    transition: 0.5s;
 }
 
 header .btn-contato button:hover {
     box-shadow: 0px 0px 8px #1b1bd3;
     transform: scale(1.07);
-    transition: 0.5s;
 }
 
 header .logo img {
@@ -88,49 +74,44 @@ header .logo img {
     height: 80px;
 }
 
-/* ========================== */
-/* ======= PERFIL ========== */
-/* ========================== */
-
+/* Perfil */
 section.perfil {
-    margin-top: 120px;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     width: 100%;
-    padding: 40px 20px; /* Adiciona espaçamento nas laterais */
+    padding: 40px 20px;
 }
 
-/* Cartão de Perfil */
 .card {
     background-color: #0d0d0d;
     padding: 40px;
     border-radius: 20px;
     text-align: center;
-    width: 40%; /* Ocupa 90% da largura da section */
-    max-width: 1000px; /* Define um tamanho máximo */
+    width: 100%;
+    max-width: 500px;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
-/* Imagem do Perfil */
 .card img {
-    width: 250px;
-    height: 250px;
+    width: 100%;
+    max-width: 250px;
+    height: auto;
     border-radius: 15%;
     border: 3px solid #ffffff;
 }
 
-/* Nome do Usuário */
+/* Textos do Card */
 .card h2 {
     color: #fff;
     font-size: 24px;
     margin-top: 10px;
 }
 
-/* Cargo */
 .card h3 {
-    color: #a8a8a8;
-    font-size: 16px;
+    color: #fa0000;
+    font-size: 25px;
+    font-weight: 700;
     margin-bottom: 20px;
 }
 
@@ -154,6 +135,20 @@ section.perfil {
     transform: scale(1.2);
 }
 
+/* Menu Mobile */
+.menu-mobile {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: black;
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+    flex-direction: column;
+    align-items: center;
+}
+
 .menu-mobile a {
     color: white;
     padding: 10px;
@@ -173,6 +168,7 @@ section.perfil {
     color: white;
 }
 
+/* Responsividade */
 @media (max-width: 768px) {
     .menu-desktop {
         display: none;
@@ -183,55 +179,39 @@ section.perfil {
     .menu-mobile {
         display: flex;
     }
-}
 
-/* Responsividade da seção de perfil */
-.perfil {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    width: 100%;
-}
+    .card {
+        padding: 30px;
+        width: 90%;
+    }
 
-.card {
-    background-color: #0d0d0d;
-    padding: 40px;
-    border-radius: 20px;
-    text-align: center;
-    width: 90%;
-    max-width: 500px;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-}
+    .card h2 {
+        font-size: 20px;
+    }
 
-.card img {
-    width: 100%;
-    max-width: 250px;
-    height: auto;
-    border-radius: 15%;
-    border: 3px solid #ffffff;
+    .card h3 {
+        font-size: 14px;
+    }
+
+    .social-icons a {
+        font-size: 18px;
+        padding: 6px;
+    }
 }
 
 @media (max-width: 480px) {
     .card {
-        width: 100%;
         padding: 20px;
     }
-}
 
-.menu-mobile {
-    display: none;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    background: black;
-    width: 200px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
-    flex-direction: column;
-    align-items: center;
-}
+    header .btn-contato button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
 
-.menu-mobile.active {
-    display: flex;
+    .social-icons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
