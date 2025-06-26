@@ -82,3 +82,23 @@ document.addEventListener('DOMContentLoaded', () => {
         a.addEventListener('click', playClickSound);
     });
 });
+
+// Modal de contato (redes sociais)
+document.addEventListener('DOMContentLoaded', () => {
+    const openBtn = document.getElementById('openContactModal');
+    const modal = document.getElementById('contactModal');
+    const closeBtn = document.getElementById('closeContactModal');
+    if (openBtn && modal && closeBtn) {
+        openBtn.addEventListener('click', () => {
+            modal.style.display = 'flex';
+        });
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    }
+});
