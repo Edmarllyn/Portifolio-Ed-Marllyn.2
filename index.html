@@ -1,157 +1,95 @@
 <!DOCTYPE html>
-<!-- Define que o documento está usando HTML5 -->
-
 <html lang="pt-br">
-<!-- Define o idioma da página como português do Brasil -->
-
 <head>
-    <meta charset="UTF-8">
-    <!-- Define o conjunto de caracteres como UTF-8 (compatível com acentuação e caracteres especiais) -->
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Torna a página responsiva, adaptando para dispositivos móveis -->
-
-    <title>Ed Marllyn Soares Confessor - Portfólio Profissional</title>
-    <!-- Título da aba do navegador -->
-
-    <!-- Fonte personalizada do Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <!-- Otimização para carregar as fontes mais rápido -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Preconexão com servidor de fontes (com CORS habilitado) -->
-    <link href="https://fonts.googleapis.com/css2?family=Emblema+One&display=swap" rel="stylesheet">
-    <!-- Importa a fonte "Emblema One" do Google Fonts -->
-
-    <!-- Link para o arquivo CSS externo -->
-    <link rel="stylesheet" href="style.css">
-    
-    <!-- Script do FontAwesome para ícones -->
-    <script src="https://kit.fontawesome.com/5965870c94.js" crossorigin="anonymous"></script>
-
-    <link rel="icon" href="img/icon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio Edy Confessor</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
-    <canvas id="bg-animated"></canvas>
-    <!-- Início do cabeçalho da página -->
-    <header class="header">
-        <div class="profile-img">
-            <img src="img/edmarllyn.jpg" alt="Ed Marllyn Soares Confessor">
-        </div>
-        <div class="profile-info profile-info-desktop">
-            <h1>Ed Marllyn Soares Confessor</h1>
-            <p>Engenheiro de Dados | Desenvolvedor PL/SQL</p>
-        </div>
-        <button class="btn-contato-header" id="openContactModal">Contato</button>
-    </header>
-
-    <main>
-        <section class="section contact-section">
-            <h2>Contato</h2>
-            <ul class="contact-info">
-                <li><strong>Endereço:</strong> Avenida Angarinhas, 645 - São Paulo</li>
-                <li><strong>Telefone:</strong> (11) 984080252</li>
-                <li><strong>Email:</strong> edmarllynsoaresconfessor@gmail.com</li>
-                <li><strong>Data de nascimento:</strong> 01/08/04 (20 anos)</li>
-                <li><strong>LinkedIn:</strong> Ed Marllyn Soares Confessor</li>
-            </ul>
-        </section>
-        <section class="section">
-            <h2>Objetivo</h2>
-            <p>Atuar como Engenheiro de Dados ou Desenvolvedor PL/SQL, contribuindo com soluções robustas de integração, processamento e análise de dados, com foco em performance, segurança e escalabilidade.</p>
-        </section>
-        <section class="section">
-            <h2>Resumo Profissional</h2>
-            <p>Profissional com sólida experiência em engenharia de dados e desenvolvimento PL/SQL, com atuação em ambientes corporativos exigentes. Expertise na criação de pipelines de dados, modelagem, performance tuning e automação de processos em banco de dados Oracle e cloud Azure. Facilidade de aprendizado, ótima comunicação e capacidade de trabalho em equipe.</p>
-        </section>
-        <section class="section">
-            <h2>Experiência Profissional</h2>
-            <div class="job">
-                <h3>Engenheiro de Dados</h3>
-                <p><strong>STSystem Informática</strong> | Jul/2022 - Atual</p>
-                <ul>
-                    <li>Criação e manutenção de pipelines de dados com Azure Data Factory e Databricks.</li>
-                    <li>Processamento de dados em larga escala com PySpark e Apache Spark.</li>
-                    <li>Modelagem de dados, otimização de consultas e automação de rotinas.</li>
-                    <li>Integração com Azure Event Hubs para ingestão em tempo real.</li>
-                </ul>
-            </div>
-            <div class="job">
-                <h3>Desenvolvedor PL/SQL</h3>
-                <p><strong>Maximus Play Fast</strong> | Jan/2021 - Fev/2022</p>
-                <ul>
-                    <li>Desenvolvimento de procedures, functions, triggers e packages em PL/SQL.</li>
-                    <li>Otimização de consultas SQL e análise de performance.</li>
-                    <li>Integração de sistemas e garantia da integridade dos dados.</li>
-                </ul>
-            </div>
-        </section>
-        <section class="section">
-            <h2>Formação Acadêmica</h2>
-            <ul>
-                <li><strong>Tecnólogo em Análise e Desenvolvimento de Sistemas</strong><br>Faculdade Anhanguera | Jan/2023 – Jul/2025 (Cursando)</li>
-            </ul>
-        </section>
-        <section class="section">
-            <h2>Cursos e Certificações</h2>
-            <ul>
-                <li>Formação Engenharia de Dados com Databricks, PySpark e Azure</li>
-                <li>SQL Completo: do Básico ao Avançado – Udemy</li>
-                <li>Databricks Developer SQL e Python para Análise de Dados – Udemy</li>
-                <li>Programação Oracle 12c - SQL Foundations – STSystem</li>
-                <li>PL/SQL Developer Oracle 12c (23h) – STSystem</li>
-                <li>Análise de Dados com Python – Anhanguera</li>
-                <li>Programação Web – Dom Bosco (conclusão prevista: Dez/2024)</li>
-                <li>Programador de Sistemas – Dom Bosco</li>
-                <li>Python Para DataScience – Cursando (60h) Senai</li>
-            </ul>
-        </section>
-        <section class="section">
-            <h2>Competências Técnicas</h2>
-            <ul>
-                <li><strong>Linguagens:</strong> PL/SQL, SQL, Python, PySpark</li>
-                <li><strong>Bancos de Dados:</strong> Oracle, PostgreSQL, MySQL, SQL Database (Azure)</li>
-                <li><strong>Ferramentas e Plataformas:</strong> SQL Developer, TOAD, Databricks, Azure Data Factory, Azure Event Hubs, Power BI</li>
-                <li><strong>Big Data & Processamento:</strong> Apache Spark, Azure Databricks</li>
-            </ul>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-social">
-            <span class="footer-label">Redes sociais:</span>
-            <a href="https://github.com/edmarllyn" target="_blank" aria-label="GitHub">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#6e40c9" d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.339-2.221-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.847-2.337 4.695-4.566 4.944.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.749 0 .268.18.579.688.481C19.138 20.2 22 16.447 22 12.021 22 6.484 17.523 2 12 2Z"/></svg>
-            </a>
-            <a href="https://www.linkedin.com/in/ed-marllyn-soares-confessor-179564260/" target="_blank" aria-label="LinkedIn"> 
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#0077b5" d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.27c-.966 0-1.75-.79-1.75-1.76 0-.97.784-1.76 1.75-1.76s1.75.79 1.75 1.76c0 .97-.784 1.76-1.75 1.76zm13.5 11.27h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.89v1.36h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.59v5.61z"/></svg>
-            </a>
-            <a href="https://wa.me/5511940850252" target="_blank" aria-label="WhatsApp">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#25d366" d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.6 5.97L0 24l6.22-1.63A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 22c-1.85 0-3.68-.5-5.25-1.44l-.38-.22-3.69.97.99-3.59-.25-.37A9.94 9.94 0 0 1 2 12c0-5.52 4.48-10 10-10s10 4.48 10 10-4.48 10-10 10zm5.2-7.6c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.18-.44-2.25-1.4-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.12-.12.28-.32.42-.48.14-.16.18-.28.28-.46.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47-.16-.01-.34-.01-.52-.01-.18 0-.48.07-.73.34-.25.27-.97.95-.97 2.3 0 1.35.99 2.65 1.13 2.83.14.18 1.95 2.98 4.73 4.06.66.28 1.18.45 1.58.58.66.21 1.26.18 1.73.11.53-.08 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.18-.53-.32z"/></svg>
-            </a>
-        </div>
-    </footer>
-    <div id="contactModal" class="modal-contact" style="display:none;">
-        <div class="modal-content-contact">
-            <span class="close-modal-contact" id="closeContactModal">&times;</span>
-            <h2>Minhas Redes Sociais</h2>
-            <div class="modal-social-links">
-                <a href="https://github.com/edmarllyn" target="_blank" aria-label="GitHub">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#6e40c9" d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.339-2.221-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.847-2.337 4.695-4.566 4.944.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.749 0 .268.18.579.688.481C19.138 20.2 22 16.447 22 12.021 22 6.484 17.523 2 12 2Z"/></svg>
-                    GitHub
-                </a>
-                <a href="https://www.linkedin.com/in/ed-marllyn-soares-confessor-179564260/" target="_blank" aria-label="LinkedIn">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#0077b5" d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.27c-.966 0-1.75-.79-1.75-1.76 0-.97.784-1.76 1.75-1.76s1.75.79 1.75 1.76c0 .97-.784 1.76-1.75 1.76zm13.5 11.27h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.89v1.36h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.59v5.61z"/></svg>
-                    LinkedIn
-                </a>
-                <a href="https://wa.me/5511940850252" target="_blank" aria-label="WhatsApp">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#25d366" d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.6 5.97L0 24l6.22-1.63A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 22c-1.85 0-3.68-.5-5.25-1.44l-.38-.22-3.69.97.99-3.59-.25-.37A9.94 9.94 0 0 1 2 12c0-5.52 4.48-10 10-10s10 4.48 10 10-4.48 10-10 10zm5.2-7.6c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.18-.44-2.25-1.4-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.12-.12.28-.32.42-.48.14-.16.18-.28.28-.46.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47-.16-.01-.34-.01-.52-.01-.18 0-.48.07-.73.34-.25.27-.97.95-.97 2.3 0 1.35.99 2.65 1.13 2.83.14.18 1.95 2.98 4.73 4.06.66.28 1.18.45 1.58.58.66.21 1.26.18 1.73.11.53-.08 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.18-.53-.32z"/></svg>
-                    WhatsApp
-                </a>
-            </div>
-        </div>
+  <header>
+    <div class="logo">
+      <span class="logo-edy">Edy</span>
+      <span class="logo-confessor">Confessor</span>
     </div>
-    <script src="script.js"></script>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#especialidades">Especialidades</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="hero" id="inicio">
+      <h2 id="typed-title">Quem sou eu?</h2>
+      <div class="quem-sou-eu">
+        <p>Olá! Meu nome é Ed Marllyn Soares Confessor, tenho 20 anos e estou cursando o último semestre de Análise e Desenvolvimento de Sistemas pela Anhanguera. Atualmente, trabalho como desenvolvedor PL/SQL na STSystem, uma consultoria de tecnologia que atende diversos clientes com soluções robustas em banco de dados e sistemas corporativos.</p>
+        <p>Minha trajetória começou como analista de suporte na Maximus, e com dedicação e curiosidade por tecnologia, fui evoluindo até assumir funções mais técnicas. Hoje, na STSystem, atuei inicialmente com PL/SQL em ambiente Oracle e fui crescendo dentro da empresa. Agora, além do desenvolvimento, também atuo com engenharia de dados, utilizando ferramentas como Azure Data Lake, Databricks, Azure Data Factory e Event Hubs, sempre estruturando pipelines baseadas na arquitetura em camadas (bronze, silver e gold).</p>
+        <p>Sou apaixonado por dados, tecnologia e desafios. Gosto de aprender coisas novas, resolver problemas complexos e colaborar com soluções que realmente façam a diferença. Estou sempre em busca de evolução profissional e pessoal, com o objetivo de me tornar uma referência na área de dados e desenvolvimento backend.</p>
+      </div>
+      <p>Unimos criatividade e inovação em uma sinergia perfeita. Com uma abordagem única que incorpora design impactante, funcionalidade intuitiva e otimização para resultados, estamos prontos para transformar sua realidade em visão digital.</p>
+      <a href="#contato" class="btn-contato">Entre em Contato</a>
+    </section>
+    <section class="especialidades" id="especialidades">
+      <h2><i class="fa-solid fa-star"></i> Especialidades</h2>
+      <div class="especialidades-lista">
+        <div class="especialidade-card">
+          <i class="fa-solid fa-code"></i>
+          <h3>Desenvolvimento Web</h3>
+          <p>Sites modernos, responsivos e otimizados.</p>
+        </div>
+        <div class="especialidade-card">
+          <i class="fa-solid fa-paint-brush"></i>
+          <h3>Design UI/UX</h3>
+          <p>Experiência visual e navegação intuitiva.</p>
+        </div>
+        <div class="especialidade-card">
+          <i class="fa-solid fa-mobile-alt"></i>
+          <h3>Mobile First</h3>
+          <p>Projetos pensados para todos os dispositivos.</p>
+        </div>
+      </div>
+    </section>
+    <section class="sobre" id="sobre">
+      <h2><i class="fa-solid fa-user"></i> Sobre</h2>
+      <div class="sobre-conteudo">
+        <img src="img/Ed Marllyn.png" alt="Foto Edy Confessor" class="sobre-foto">
+        <div>
+          <p>Olá! Sou Edy Confessor, apaixonado por tecnologia, design e inovação. Minha missão é transformar ideias em soluções digitais que encantam e geram resultados. Vamos criar juntos?</p>
+        </div>
+      </div>
+    </section>
+    <section class="projetos" id="projetos">
+      <h2><i class="fa-solid fa-briefcase"></i> Projetos</h2>
+      <div class="projetos-lista">
+        <div class="projeto-card">
+          <img src="img/icon.png" alt="Projeto 1">
+          <h3>Projeto Incrível</h3>
+          <p>Descrição breve do projeto. Tecnologias usadas, desafios e resultados.</p>
+          <a href="#" class="btn-projeto">Ver mais</a>
+        </div>
+        <div class="projeto-card">
+          <img src="img/icon.png" alt="Projeto 2">
+          <h3>Outro Projeto</h3>
+          <p>Descrição breve do projeto. Tecnologias usadas, desafios e resultados.</p>
+          <a href="#" class="btn-projeto">Ver mais</a>
+        </div>
+      </div>
+    </section>
+    <section class="contato" id="contato">
+      <h2><i class="fa-solid fa-envelope"></i> Contato</h2>
+      <form class="contato-form">
+        <input type="text" placeholder="Seu nome" required>
+        <input type="email" placeholder="Seu e-mail" required>
+        <textarea placeholder="Sua mensagem" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+  <script src="script.js"></script>
 </body>
-</html>
+</html> 

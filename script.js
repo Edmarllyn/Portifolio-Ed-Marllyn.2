@@ -1,104 +1,59 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const menuIcon = document.querySelector(".menu-icon");
-    const menuMobile = document.querySelector(".menu-mobile");
-
-    if (menuIcon && menuMobile) {
-        menuIcon.addEventListener("click", function () {
-            menuMobile.classList.toggle("active");
-        });
-
-        // Fecha o menu ao clicar fora dele
-        document.addEventListener("click", function (event) {
-            if (!menuIcon.contains(event.target) && !menuMobile.contains(event.target)) {
-                menuMobile.classList.remove("active");
-            }
-        });
+// Scroll suave ao clicar no menu
+const menuLinks = document.querySelectorAll('nav a');
+menuLinks.forEach(link => {
+  link.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
     }
+  });
 });
 
-// Efeito de fundo animado: Matrix code rain (código caindo)
-window.addEventListener('DOMContentLoaded', () => {
-    const canvas = document.getElementById('bg-animated');
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    let width = window.innerWidth;
-    let height = window.innerHeight;
-    let fontSize = 18;
-    let columns = Math.floor(width / fontSize);
-    let drops = [];
-    let codeChars = '01<>[]{}();=+-*/%$#@&ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-
-    function resize() {
-        width = window.innerWidth;
-        height = window.innerHeight;
-        canvas.width = width;
-        canvas.height = height;
-        columns = Math.floor(width / fontSize);
-        drops = Array.from({length: columns}, () => Math.random() * -40);
+// Efeito de digitação no título principal
+const typedTitle = document.getElementById('typed-title');
+if (typedTitle) {
+  const original = 'Quem sou eu?';
+  typedTitle.innerHTML = '';
+  let i = 0;
+  function type() {
+    if (i < original.length) {
+      typedTitle.innerHTML += original[i];
+      i++;
+      setTimeout(type, 28); // mais rápido
     }
-    window.addEventListener('resize', resize);
-    resize();
-
-    function draw() {
-        ctx.fillStyle = 'rgba(24,25,36,0.18)';
-        ctx.fillRect(0, 0, width, height);
-        ctx.font = fontSize + "px 'Fira Mono', monospace";
-        ctx.textAlign = 'center';
-        for (let i = 0; i < columns; i++) {
-            const char = codeChars[Math.floor(Math.random() * codeChars.length)];
-            ctx.fillStyle = '#00ffd0';
-            ctx.shadowColor = '#00ffd0';
-            ctx.shadowBlur = 8;
-            ctx.fillText(char, i * fontSize + fontSize/2, drops[i] * fontSize);
-            ctx.shadowBlur = 0;
-            if (Math.random() > 0.975) {
-                drops[i] = 0;
-            }
-            drops[i] += 1;
-            if (drops[i] * fontSize > height) {
-                drops[i] = Math.random() * -20;
-            }
-        }
-    }
-    setInterval(draw, 50);
-});
-
-// Efeito sonoro ao clicar na foto de perfil ou nos ícones sociais
-const clickSound = new Audio('click.mp3'); // Adicione um arquivo click.mp3 na raiz ou ajuste o caminho
-
-function playClickSound() {
-    clickSound.currentTime = 0;
-    clickSound.play();
+  }
+  setTimeout(type, 200);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Foto de perfil
-    const profileImg = document.querySelector('.profile-img img');
-    if (profileImg) {
-        profileImg.addEventListener('click', playClickSound);
+// Fade-in nas seções ao aparecer
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
     }
-    // Ícones sociais
-    document.querySelectorAll('.footer-social a').forEach(a => {
-        a.addEventListener('click', playClickSound);
-    });
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('main section').forEach(sec => {
+  sec.classList.add('hidden');
+  observer.observe(sec);
 });
 
-// Modal de contato (redes sociais)
-document.addEventListener('DOMContentLoaded', () => {
-    const openBtn = document.getElementById('openContactModal');
-    const modal = document.getElementById('contactModal');
-    const closeBtn = document.getElementById('closeContactModal');
-    if (openBtn && modal && closeBtn) {
-        openBtn.addEventListener('click', () => {
-            modal.style.display = 'flex';
-        });
-        closeBtn.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
+// Destaque animado no menu conforme rolagem
+const sections = document.querySelectorAll('main section');
+window.addEventListener('scroll', () => {
+  let scrollPos = window.scrollY + 120;
+  sections.forEach(sec => {
+    if (scrollPos >= sec.offsetTop && scrollPos < sec.offsetTop + sec.offsetHeight) {
+      document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+      const id = sec.getAttribute('id');
+      const activeLink = document.querySelector('nav a[href="#' + id + '"]');
+      if (activeLink) activeLink.classList.add('active');
     }
+  });
 });
+
+// Fade-in CSS classes (adicione ao style.css):
+// .hidden { opacity: 0; transform: translateY(40px); transition: all 0.7s cubic-bezier(.4,0,.2,1); }
+// .show { opacity: 1; transform: none; } 
