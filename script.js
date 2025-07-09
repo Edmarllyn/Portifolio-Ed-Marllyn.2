@@ -26,6 +26,8 @@ if (typedTitle) {
   setTimeout(type, 200);
 }
 
+// Removido o efeito de digitação do subtítulo conforme solicitado
+
 // Fade-in nas seções ao aparecer
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {

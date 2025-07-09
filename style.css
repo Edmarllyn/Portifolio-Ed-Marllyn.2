@@ -14,28 +14,6 @@ header {
   box-shadow: 0 2px 8px rgba(0,0,0,0.10);
 }
 
-.logo {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  font-weight: bold;
-}
-
-.logo-edy {
-  font-size: 2.5rem;
-  color: #1e90ff;
-  letter-spacing: 2px;
-  line-height: 1;
-}
-
-.logo-confessor {
-  font-size: 1.1rem;
-  color: #ededed;
-  margin-top: -4px;
-  margin-left: 4px;
-  letter-spacing: 1px;
-}
-
 nav ul {
   list-style: none;
   display: flex;
@@ -295,4 +273,470 @@ nav a.active {
   font-weight: 700;
   border-bottom: 2px solid #1e90ff;
   padding-bottom: 2px;
+} 
+
+/* Banner Header Profissional */
+.banner-header {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+  color: #fff;
+  padding: 0;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  overflow: hidden;
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+}
+
+.banner-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(0, 195, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(30, 144, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(0, 195, 255, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.banner-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, rgba(0, 195, 255, 0.3), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(30, 144, 255, 0.3), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(0, 195, 255, 0.2), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(30, 144, 255, 0.2), transparent),
+    radial-gradient(2px 2px at 160px 30px, rgba(0, 195, 255, 0.3), transparent);
+  background-repeat: repeat;
+  background-size: 200px 100px;
+  animation: particleFloat 20s linear infinite;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-100px);
+  }
+}
+
+.banner-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px 24px 24px;
+  min-height: 220px;
+  gap: 32px;
+  position: relative;
+  z-index: 2;
+}
+
+.banner-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.1;
+  margin-bottom: 0;
+  margin-right: 40px;
+  white-space: nowrap;
+}
+
+.banner-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+  flex: 1 1 0;
+  height: 100%;
+  padding-left: 0px;
+  justify-content: flex-start;
+}
+
+.banner-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.banner-subtitle {
+  position: static;
+  margin: 0 0 0 8px;
+  text-align: left;
+  font-size: 2.7rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #b2e0ff 0%, #00c3ff 50%, #1e90ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  min-height: 3.2rem;
+  transition: all 0.4s ease;
+  opacity: 1;
+  text-shadow: 0 0 30px rgba(0, 195, 255, 0.3);
+  animation: textGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes textGlow {
+  0% {
+    text-shadow: 0 0 30px rgba(0, 195, 255, 0.3);
+  }
+  100% {
+    text-shadow: 0 0 50px rgba(0, 195, 255, 0.6);
+  }
+}
+
+.banner-subtitle.fade {
+  opacity: 0;
+}
+
+.banner-subtitle, .banner-cta, .banner-social, .banner-btn {
+  margin: 0;
+}
+
+.banner-right {
+  /* Removendo position absolute para alinhar pelo flex */
+  position: static;
+  left: unset;
+  top: unset;
+  transform: none;
+  z-index: 2;
+  flex: 0 0 180px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  margin-right: 0;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.banner-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  background: linear-gradient(45deg, #00c3ff, #1e90ff, #00c3ff) border-box;
+  box-shadow: 
+    0 8px 32px rgba(0, 195, 255, 0.3),
+    0 0 0 8px rgba(0, 195, 255, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  background: #fff;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: photoGlow 3s ease-in-out infinite alternate;
+  cursor: pointer;
+}
+
+.banner-photo::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: linear-gradient(45deg, #00c3ff, #1e90ff, #00c3ff);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  animation: photoRing 3s ease-in-out infinite;
+}
+
+.banner-photo::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: conic-gradient(from 0deg, #00c3ff, #1e90ff, #00c3ff, #1e90ff, #00c3ff);
+  border-radius: 50%;
+  z-index: -2;
+  opacity: 0.3;
+  animation: photoRing 4s linear infinite reverse;
+}
+
+.banner-photo:hover {
+  transform: translateY(-50%) scale(1.1) rotate(5deg);
+  box-shadow: 
+    0 16px 48px rgba(0, 195, 255, 0.4),
+    0 0 0 12px rgba(0, 195, 255, 0.2),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.banner-photo:hover::before {
+  opacity: 0.3;
+}
+
+.banner-photo:hover::after {
+  opacity: 0.6;
+}
+
+@keyframes photoGlow {
+  0% {
+    box-shadow: 
+      0 8px 32px rgba(0, 195, 255, 0.3),
+      0 0 0 8px rgba(0, 195, 255, 0.1),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    box-shadow: 
+      0 12px 40px rgba(0, 195, 255, 0.5),
+      0 0 0 10px rgba(0, 195, 255, 0.15),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+  }
+}
+
+@keyframes photoRing {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.banner-actions {
+  position: static;
+  right: auto;
+  top: auto;
+  transform: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  z-index: 2;
+}
+
+.banner-social {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+}
+
+.banner-social a {
+  color: #fff;
+  font-size: 1.8rem;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-decoration: none;
+  position: relative;
+  padding: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.banner-social a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, #00c3ff, #1e90ff);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.banner-social a::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #00c3ff, #1e90ff, #00c3ff);
+  border-radius: 50%;
+  z-index: -2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: socialRing 2s linear infinite;
+}
+
+.banner-social a:hover {
+  color: #fff;
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 8px 24px rgba(0, 195, 255, 0.4);
+}
+
+.banner-social a:hover::before {
+  opacity: 1;
+}
+
+.banner-social a:hover::after {
+  opacity: 0.3;
+}
+
+.banner-social a:hover i {
+  animation: iconBounce 0.6s ease;
+}
+
+@keyframes socialRing {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes iconBounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
+}
+
+.banner-btn {
+  display: inline-block;
+  padding: 16px 40px;
+  background: linear-gradient(135deg, #00c3ff 0%, #1e90ff 100%);
+  color: #fff !important;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none !important;
+  box-shadow: 
+    0 8px 24px rgba(0, 195, 255, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.banner-btn::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #00c3ff, #1e90ff, #00c3ff);
+  border-radius: 50px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: btnRing 3s linear infinite;
+}
+
+.banner-btn:hover {
+  background: linear-gradient(135deg, #fff 0%, #f0f8ff 100%);
+  color: #00c3ff !important;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 
+    0 16px 40px rgba(0, 195, 255, 0.4),
+    0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+.banner-btn:hover::before {
+  left: 100%;
+}
+
+.banner-btn:hover::after {
+  opacity: 0.2;
+}
+
+.banner-btn:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+@keyframes btnRing {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .banner-header {
+    min-height: 180px;
+    display: block;
+  }
+  .banner-content {
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 12px 16px 12px;
+    gap: 20px;
+  }
+  .banner-left {
+    order: 1;
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+  .banner-photo {
+    width: 140px;
+    height: 140px;
+  }
+  .banner-actions {
+    order: 2;
+    position: static;
+    right: auto;
+    top: auto;
+    transform: none;
+    margin-top: 0;
+    align-self: center;
+  }
+}
+@media (max-width: 600px) {
+  .banner-title {
+    font-size: 2rem;
+  }
+  .banner-photo {
+    width: 110px;
+    height: 110px;
+  }
+  .banner-btn {
+    padding: 12px 28px;
+    font-size: 1rem;
+  }
+  .banner-social a {
+    font-size: 1.5rem;
+    padding: 10px;
+  }
+  .banner-subtitle {
+    font-size: 2rem;
+  }
 } 
