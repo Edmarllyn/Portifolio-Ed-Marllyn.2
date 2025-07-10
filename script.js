@@ -105,12 +105,32 @@ function initCursosCarousel() {
   const gap = parseInt(getComputedStyle(carousel).gap) || 32;
   const scrollAmount = itemWidth + gap;
 
+  function updateArrows() {
+    // Esconde a seta da esquerda se estiver no início
+    if (carousel.scrollLeft <= 0) {
+      btnLeft.style.visibility = 'hidden';
+    } else {
+      btnLeft.style.visibility = 'visible';
+    }
+    // Esconde a seta da direita se estiver no final
+    if (carousel.scrollLeft + carousel.offsetWidth >= carousel.scrollWidth - 2) {
+      btnRight.style.visibility = 'hidden';
+    } else {
+      btnRight.style.visibility = 'visible';
+    }
+  }
+
   btnLeft.addEventListener('click', () => {
     carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    setTimeout(updateArrows, 400);
   });
   btnRight.addEventListener('click', () => {
     carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    setTimeout(updateArrows, 400);
   });
+  carousel.addEventListener('scroll', updateArrows);
+  window.addEventListener('resize', updateArrows);
+  updateArrows();
 }
 
 document.addEventListener('DOMContentLoaded', initCursosCarousel);

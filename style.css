@@ -14,7 +14,7 @@ body {
   z-index: 1;
   margin: 0;
   padding: 0;
-  background: #000000ee;
+  background: #000000;
   color: #fff;
   font-family: 'Montserrat', Arial, sans-serif;
   min-height: 100vh;
@@ -656,5 +656,163 @@ body {
   .curso-item img {
     width: 70px;
     height: 70px;
+  }
+}
+
+.experiencias-section {
+  width: 100vw;
+  background: #18181800;
+  padding: 48px 0 48px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.experiencias-container {
+  max-width: 1100px;
+  width: 100%;
+  padding: 0 32px;
+  box-sizing: border-box;
+}
+
+.experiencias-section h2 {
+  color: #ffd800;
+  font-size: 2rem;
+  margin-bottom: 24px;
+  text-align: center;
+  background: linear-gradient(90deg, #ff6a00, #ffd800, #ff6a00);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: cursos-h2-shine 3s linear infinite;
+  position: relative;
+  text-shadow: 0 2px 16px #ffb30080, 0 0px 2px #00000080;
+}
+
+.experiencias-lista {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+  justify-content: center;
+}
+
+.experiencia-item {
+  background: rgb(0, 0, 0);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px 0 #00000030;
+  border-left: 5px solid #ffd800;
+  padding: 24px 24px 18px 24px;
+  min-width: 280px;
+  max-width: 420px;
+  flex: 1 1 320px;
+  color: #fff;
+  margin-bottom: 12px;
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+}
+.experiencia-item h3 {
+  font-size: 1.18rem;
+  color: #ffd800;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+.experiencia-item h3 span {
+  color: #fff;
+  font-weight: 400;
+  font-size: 1rem;
+}
+.experiencia-periodo {
+  font-size: 0.98rem;
+  color: #ffb300;
+  margin-bottom: 10px;
+  display: block;
+}
+.experiencia-item ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #e0e0e0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.habilidades-bloco {
+  background: rgb(0, 0, 0);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px 0 #00000030;
+  border-left: 5px solid #ffd800;
+  padding: 22px 24px 18px 24px;
+  color: #fff;
+  max-width: 420px;
+  margin: 0 auto;
+  text-align: center;
+}
+.habilidades-bloco h4 {
+  color: #ffd800;
+  font-size: 1.13rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.habilidades-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  justify-content: center;
+}
+.habilidades-lista li {
+  background: #222;
+  color: #ffd800;
+  border-radius: 8px;
+  padding: 6px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 1px 4px 0 #00000020;
+}
+
+.resumo-profissional-bloco {
+  background: rgb(0, 0, 0);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px 0 #00000030;
+  border-left: 5px solid #ffd800;
+  padding: 22px 24px 18px 24px;
+  color: #fff;
+  max-width: 700px;
+  margin: 0 auto 32px auto;
+  text-align: left;
+}
+.resumo-profissional-bloco h4 {
+  color: #ffd800;
+  font-size: 1.13rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.resumo-profissional-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.resumo-profissional-lista li {
+  margin-bottom: 8px;
+  color: #e0e0e0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+.resumo-profissional-lista li strong {
+  color: #ffd800;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .experiencias-lista {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .experiencia-item, .habilidades-bloco {
+    min-width: 0;
+    max-width: 100%;
+    padding: 18px 8px 12px 12px;
   }
 }
