@@ -9,8 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <canvas id="prog-bg-canvas" class="prog-bg-canvas"></canvas>
   <header class="banner-header">
-    <div id="particles-js"></div>
     <div class="banner-content">
       <img src="img/Ed Marllyn Header.png" alt="Foto Ed Marllyn" class="banner-photo">
       <div class="banner-center">
@@ -22,15 +22,69 @@
       </div>
     </div>
   </header>
+  <section class="quem-sou-eu-section">
+    <div class="quem-sou-eu-container">
+      <div class="quem-sou-eu-texto">
+        <h2>Quem sou eu</h2>
+        <p>Sou Ed Marllyn Soares Confessor, desenvolvedor apaixonado por tecnologia, inovação e soluções criativas. Busco sempre evoluir e entregar o melhor em cada projeto.</p>
+      </div>
+      <div class="quem-sou-eu-foto">
+        <img src="img/Ed Marllyn.png" alt="Ed Marllyn Soares Confessor" class="foto-quem-sou-eu">
+      </div>
+    </div>
+  </section>
+  <section class="cursos-section">
+    <div class="cursos-container">
+      <h2>Cursos</h2>
+      <div class="cursos-carousel-wrapper">
+        <button class="carousel-btn carousel-btn-left" aria-label="Anterior">&#8592;</button>
+        <div class="cursos-carousel">
+          <div class="curso-item">
+            <img src="img/Engenharia de dados.png" alt="Engenharia de Dados com Databricks, PySpark e Azure">
+            <span>Engenharia de Dados com Databricks, PySpark e Azure</span>
+          </div>
+          <div class="curso-item">
+            <img src="img/SQL Completo do Básico ao Avançado – Udemy.png" alt="SQL Completo: do Básico ao Avançado – Udemy">
+            <span>SQL Completo: do Básico ao Avançado – Udemy</span>
+          </div>
+          <div class="curso-item">
+            <img src="img/Programação Oracle 12c - SQL Foundations – STSystem.png" alt="Programação Oracle 12c - SQL Foundations – STSystem">
+            <span>Programação Oracle 12c - SQL Foundations – STSystem</span>
+          </div>
+          <div class="curso-item">
+            <img src="img/PLSQL Developer Oracle 12c (32h) – STSystem.png" alt="PL/SQL Developer Oracle 12c (32h) – STSystem">
+            <span>PL/SQL Developer Oracle 12c (32h) – STSystem</span>
+          </div>
+          <div class="curso-item">
+            <img src="img/Análise de Dados com Python – Anhanguera.png" alt="Análise de Dados com Python – Anhanguera">
+            <span>Análise de Dados com Python – Anhanguera</span>
+          </div>
+          <div class="curso-item">
+            <img src="img/Programação Web – Dom Bosco.png" alt="Programação Web – Dom Bosco (conclusão prevista: Dez/2024)">
+            <span>Programação Web – Dom Bosco</span>
+          </div>
+          <div class="curso-item">
+            <img src="img/Programador de Sistemas – Dom Bosco.png" alt="Programador de Sistemas – Dom Bosco">
+            <span>Programador de Sistemas – Dom Bosco</span>
+          </div>
+          <div class="curso-item">
+            <img src="img/Python Para DataScience Cursando (60h) Senai.png" alt="Python Para DataScience - Cursando  (60h) Senai">
+            <span>Python Para DataScience - Cursando  (60h) Senai</span>
+          </div>
+        </div>
+        <button class="carousel-btn carousel-btn-right" aria-label="Próximo">&#8594;</button>
+      </div>
+    </div>
+  </section>
   <div id="modal-contato" class="modal-contato" style="display:none;">
     <div class="modal-overlay"></div>
     <div class="modal-content">
       <button class="modal-close" id="modal-close-btn" aria-label="Fechar">&times;</button>
       <h2>Minhas Redes</h2>
       <div class="modal-social-links">
-        <a href="https://github.com/seu-usuario" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/seu-usuario" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://instagram.com/seu-usuario" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/edmarllyn" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/ed-marllyn-soares-confessor-179564260/" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://wa.me/5511940850252" target="_blank" rel="noopener" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
   </div>
